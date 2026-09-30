@@ -1,0 +1,15 @@
+PRINT
+
+ADD Insect;name=Комар;size=0.2;date=2024-07-01
+ADD Bird;name=Голубь;speed=40
+ADD Insect;name=Комар;size=0.5;date=2025-05-06
+ADD Fish;name=Лосось;habitat=Река
+PRINT
+
+REM name=Лосось
+PRINT
+REM name=Петух
+PRINT
+
+REM name=Комар
+PRINT
