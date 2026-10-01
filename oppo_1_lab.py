@@ -51,9 +51,8 @@ def process_command(command):
 
 def handle_add(command):
     dictionary = {}
-    clean_line = command.strip()
 
-    _, rest = clean_line.split(" ", 1)
+    _, rest = command.strip().split(" ", 1)
     obj_type, params = rest.split(";", 1)
 
     for param in params.split(";"):
