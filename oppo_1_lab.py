@@ -50,33 +50,33 @@ def process_command(command):
 
 
 def handle_add(command):
-    dictionary = {}
+    animal_data = {}
 
-    _, rest = command.strip().split(" ", 1)
-    obj_type, params = rest.split(";", 1)
+    _, command_data = command.strip().split(" ", 1)
+    animal_type, parameters = command_data.split(";", 1)
 
-    for param in params.split(";"):
-        key, value = param.split("=")
-        dictionary[key] = value
+    for parameter in parameters.split(";"):
+        key, value = parameter.split("=")
+        animal_data[key] = value
 
-    if obj_type == "Fish":
+    if animal_type == "Fish":
         animal = Fish(
-            dictionary["name"],
-            dictionary["habitat"]
+            animal_data["name"],
+            animal_data["habitat"]
         )
-    elif obj_type == "Bird":
+    elif animal_type == "Bird":
         animal = Bird(
-            dictionary["name"],
-            dictionary["speed"]
+            animal_data["name"],
+            animal_data["speed"]
         )
-    elif obj_type == "Insect":
+    elif animal_type == "Insect":
         animal = Insect(
-            dictionary["name"],
-            dictionary["size"],
-            dictionary["date"]
+            animal_data["name"],
+            animal_data["size"],
+            animal_data["date"]
         )
     else:
-        print("Неизвестный тип", obj_type)
+        print("Неизвестный тип", animal_type)
         return
 
     animals.append(animal)
