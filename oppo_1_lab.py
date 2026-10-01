@@ -64,7 +64,7 @@ class Insect(Animal):
         return f"Размер: {self.size}, дата: {self.date}"
 
 
-animals = []
+animals: list[Animal] = []
 
 
 def process_command(command):
