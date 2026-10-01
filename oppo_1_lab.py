@@ -142,6 +142,6 @@ def handle_print():
     print()
 
 
-with open("animals.txt", "r") as f:
-    for line in f:
+with open("animals.txt", "r", encoding="utf-8") as file:
+    for line in file:
         process_command(line.strip())
