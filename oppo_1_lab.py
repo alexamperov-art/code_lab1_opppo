@@ -67,12 +67,12 @@ def handle_add(command):
     elif animal_type == "Bird":
         animal = Bird(
             animal_data["name"],
-            animal_data["speed"]
+            float(animal_data["speed"])
         )
     elif animal_type == "Insect":
         animal = Insect(
             animal_data["name"],
-            animal_data["size"],
+            float(animal_data["size"]),
             animal_data["date"]
         )
     else:
