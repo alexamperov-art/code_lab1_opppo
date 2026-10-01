@@ -4,7 +4,7 @@
 class Animal:
     """Базовый класс для животных."""
 
-    def __init__(self, name):
+    def __init__(self, name: str):
         self.name = name
 
     def __str__(self):
@@ -18,7 +18,7 @@ class Animal:
 class Fish(Animal):
     """Класс рыбы."""
 
-    def __init__(self, name, habitat):
+    def __init__(self, name: str, habitat: str):
         super().__init__(name)
         self.habitat = habitat
 
@@ -33,7 +33,7 @@ class Fish(Animal):
 class Bird(Animal):
     """Класс птицы."""
 
-    def __init__(self, name, speed):
+    def __init__(self, name: str, speed: float):
         super().__init__(name)
         self.speed = speed
 
@@ -48,7 +48,7 @@ class Bird(Animal):
 class Insect(Animal):
     """Класс насекомого."""
 
-    def __init__(self, name, size, date):
+    def __init__(self, name: str, size: float, date: str):
         super().__init__(name)
         self.size = size
         self.date = date
