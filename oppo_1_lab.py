@@ -10,6 +10,10 @@ class Animal:
     def __str__(self):
         return f"{self.__class__.__name__}(name={self.name})"
 
+    def describe(self):
+        """Возвращает описание животного."""
+        return str(self)
+
 
 class Fish(Animal):
     """Класс рыбы."""
@@ -21,6 +25,10 @@ class Fish(Animal):
     def __str__(self):
         return f"Fish(name={self.name}, habitat={self.habitat})"
 
+    def describe(self):
+        """Возвращает описание рыбы."""
+        return f"Среда обитания: {self.habitat}"
+
 
 class Bird(Animal):
     """Класс птицы."""
@@ -31,6 +39,10 @@ class Bird(Animal):
 
     def __str__(self):
         return f"Bird(name={self.name}, speed={self.speed})"
+
+    def describe(self):
+        """Возвращает описание птицы."""
+        return f"Скорость: {self.speed}"
 
 
 class Insect(Animal):
@@ -46,6 +58,10 @@ class Insect(Animal):
             f"Insect(name={self.name}, "
             f"size={self.size}, date={self.date})"
         )
+
+    def describe(self):
+        """Возвращает описание насекомого."""
+        return f"Размер: {self.size}, дата: {self.date}"
 
 
 animals = []
