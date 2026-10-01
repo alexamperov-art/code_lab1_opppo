@@ -1,4 +1,9 @@
+"""Работа со списком животных."""
+
+
 class Animal:
+    """Базовый класс для животных."""
+
     def __init__(self, name):
         self.name = name
 
@@ -7,6 +12,8 @@ class Animal:
 
 
 class Fish(Animal):
+    """Класс рыбы."""
+
     def __init__(self, name, habitat):
         super().__init__(name)
         self.habitat = habitat
@@ -16,6 +23,8 @@ class Fish(Animal):
 
 
 class Bird(Animal):
+    """Класс птицы."""
+
     def __init__(self, name, speed):
         super().__init__(name)
         self.speed = speed
@@ -25,6 +34,8 @@ class Bird(Animal):
 
 
 class Insect(Animal):
+    """Класс насекомого."""
+
     def __init__(self, name, size, date):
         super().__init__(name)
         self.size = size
@@ -41,6 +52,7 @@ animals = []
 
 
 def process_command(command):
+    """Обрабатывает команду."""
     if command.startswith("ADD"):
         handle_add(command)
     elif command.startswith("REM"):
@@ -50,6 +62,7 @@ def process_command(command):
 
 
 def handle_add(command):
+    """Добавляет животное в список."""
     animal_data = {}
 
     _, command_data = command.strip().split(" ", 1)
@@ -83,6 +96,7 @@ def handle_add(command):
 
 
 def handle_rem(command):
+    """Удаляет животное из списка."""
     clean_line = command.strip()
 
     _, rest = clean_line.split(" ", 1)
@@ -100,6 +114,7 @@ def handle_rem(command):
 
 
 def handle_print():
+    """Выводит список животных."""
     if not animals:
         print("Список пуст")
         print()
