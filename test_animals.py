@@ -41,9 +41,11 @@ def test_add_bird():
     assert animals[0].name == "Аист"
     assert animals[0].speed == 120.0
 
-def test_add_unknown_type():
+def test_add_unknown_type(capsys):
     animals.clear()
     handle_add("ADD Jellyfish;name=Бордовоежало")
+    captured = capsys.readouterr()
+    assert "Неизвестный тип Jellyfish" in captured.out
     assert len(animals) == 0
 
 def test_remove_fish():
